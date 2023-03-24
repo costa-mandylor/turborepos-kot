@@ -1,10 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import BaseLayout from "../components/baseLayout";
-import { projectDetails, techStackDetails } from "./dataSource";
+import { projectDetails } from "./dataSource";
 import ProjectItem from "../components/projectItem";
+import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
+import { getProject, IProject, PROJECT } from "@/actions/project";
 
 const Projects = () => {
+  const { data } = useQuery<IProject>({
+    queryKey: [PROJECT],
+  });
+
   return (
     <>
       <BaseLayout>
@@ -14,27 +20,26 @@ const Projects = () => {
               Tech Stack
             </h1>
             <p className="text-content py-2 lg:max-w-3xl">
-              Technologies I've been working with recently
+              Technologies I&apos;ve been working with recently
             </p>
           </section>
-          <section className="grid grid-cols-4 items-center gap-10 pt-6 md:grid-cols-5 lg:grid-cols-6">
-            {Object.keys(techStackDetails).map((item, i) => {
+          <section className="grid grid-cols-4 items-center justify-center gap-10 pt-6 md:grid-cols-5 lg:grid-cols-6">
+            {data?.attributes?.stack?.data?.map((item, i) => {
               return (
-                <div
-                  style={{
-                    position: "relative",
-                    width: "75px",
-                    height: "75px",
-                  }}
+                <a
+                  target="_blank"
+                  href={item?.attributes?.caption}
+                  key={i}
+                  className="flex items-center justify-center"
                 >
                   <Image
-                    key={i}
-                    src={techStackDetails[item].image}
-                    title={techStackDetails[item].title}
-                    alt=""
-                    fill
+                    src={item?.attributes?.url}
+                    title={item?.attributes?.name}
+                    alt={item?.attributes?.alternativeText || ""}
+                    width={75}
+                    height={75}
                   />
-                </div>
+                </a>
               );
             })}
           </section>
@@ -45,15 +50,19 @@ const Projects = () => {
             <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2 lg:grid-cols-3">
               {React.Children.toArray(
                 projectDetails.map(
-                  ({
-                    title,
-                    image,
-                    description,
-                    techstack,
-                    previewLink,
-                    githubLink,
-                  }) => (
+                  (
+                    {
+                      title,
+                      image,
+                      description,
+                      techstack,
+                      previewLink,
+                      githubLink,
+                    },
+                    i
+                  ) => (
                     <ProjectItem
+                      key={i}
                       title={title}
                       image={image}
                       description={description}
@@ -73,3 +82,15 @@ const Projects = () => {
 };
 
 export default Projects;
+
+export async function getStaticProps() {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery([PROJECT], getProject);
+
+  return {
+    props: {
+      dehydratedState: dehydrate(queryClient),
+    },
+  };
+}

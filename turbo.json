@@ -15,5 +15,6 @@
     "clean": {
       "cache": false
     }
-  }
+  },
+  "globalEnv": ["NEXT_PUBLIC_CMS_API_URL", "NEXT_PUBLIC_CMS_AUTH_TOKEN"]
 }
