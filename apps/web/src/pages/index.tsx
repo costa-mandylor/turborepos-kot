@@ -1,48 +1,77 @@
-import Head from "next/head";
-import { Button, Card } from "ui";
+import React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import BaseLayout from "../components/baseLayout";
+import { personalDetails } from "./dataSource";
 
-const CARD_CONTENT = [
-  {
-    title: "Caching Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/caching",
-    cta: "Read More",
-  },
-  {
-    title: "Running Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks",
-    cta: "Read More",
-  },
-  {
-    title: "Configuration Options",
-    href: "https://turbo.build/repo/docs/reference/configuration",
-    cta: "Read More",
-  },
-];
-
-export default function Home() {
+const MotionDiv = ({
+  children,
+  duration,
+  x,
+  delay,
+}: {
+  children: JSX.Element;
+  duration: number;
+  delay: number;
+  x?: string;
+}) => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Web - Turborepo Example</title>
-      </Head>
-
-      <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
-        <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
-          Web
-          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2">
-            Turborepo Example
-          </span>
-        </h1>
-        <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
-          {CARD_CONTENT.map((card) => (
-            <Card key={card.title} {...card} />
-          ))}
-        </div>
-      </main>
-    </div>
+    <motion.div
+      initial={{
+        x: x ?? "-100%",
+        opacity: 0,
+        scale: 0.5,
+      }}
+      animate={{ x: "0", opacity: 1, scale: 1 }}
+      transition={{ duration, delay: delay }}
+    >
+      {children}
+    </motion.div>
   );
-}
+};
+
+const Index = () => {
+  return (
+    <>
+      <BaseLayout>
+        <main className="max-width section container mx-auto items-center justify-between md:flex">
+          <div>
+            <MotionDiv duration={1} delay={0.8}>
+              <h1 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
+                Hi,👋<br></br>My Name is<br></br>
+              </h1>
+            </MotionDiv>
+            <MotionDiv duration={0.8} delay={0.5}>
+              <h1 className="bg-gradient bg-clip-text text-2xl font-bold text-transparent md:text-4xl xl:text-5xl xl:leading-tight">
+                {personalDetails.name}
+              </h1>
+            </MotionDiv>
+            <MotionDiv duration={0.8} delay={0.5}>
+              <h2 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
+                {personalDetails.tagline}
+              </h2>
+            </MotionDiv>
+          </div>
+          <MotionDiv duration={0.8} delay={0.5} x="400%">
+            <div
+              style={{
+                position: "relative",
+                width: "250px",
+                height: "260px",
+              }}
+            >
+              <Image
+                src="/profile.png"
+                alt="Kot"
+                className="border-1 w-1/2 rounded-full border-solid bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 md:ml-auto"
+                fill
+              />
+            </div>
+          </MotionDiv>
+        </main>
+      </BaseLayout>
+    </>
+  );
+};
+
+export default Index;
