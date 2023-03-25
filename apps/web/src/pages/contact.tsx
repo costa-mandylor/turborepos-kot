@@ -1,6 +1,6 @@
 import React from 'react'
 import BaseLayout from '../components/baseLayout'
-import { contactDetails } from './dataSource'
+import { contactDetails } from '../dataSource'
 
 function Contact() {
   return (

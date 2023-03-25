@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import BaseLayout from "../components/baseLayout";
-import { projectDetails } from "./dataSource";
+import { projectDetails } from "../dataSource";
 import ProjectItem from "../components/projectItem";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { getProject, IProject, PROJECT } from "@/actions/project";

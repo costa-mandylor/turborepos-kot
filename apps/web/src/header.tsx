@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import { socialMediaUrl } from "./pages/dataSource";
+import { socialMediaUrl } from "./dataSource";
+
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
