@@ -5,7 +5,7 @@
     "apps/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "turbo run build --filter=web",
     "dev": "yarn with-env:dev turbo run dev",
     "lint": "turbo run lint",
     "clean": "turbo run clean",

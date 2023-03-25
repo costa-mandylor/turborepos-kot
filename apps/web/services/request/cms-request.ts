@@ -1,10 +1,8 @@
 import axios from "axios";
 import qs from "qs";
 
-const BASE_URL = "http://localhost:1337/api/";
-
 export const request = axios.create({
-  baseURL: BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_CMS_API_URL,
   withCredentials: true,
   timeout: 10 * 1000, // 10 seconds
   paramsSerializer: {
