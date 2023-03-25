@@ -4,7 +4,7 @@ import React from 'react'
 
 const BlogItems = () => {
   return (
-    <article className="grid grid-cols-12 justify-items-center gap-2 gap-y-4">
+    <article className="grid grid-cols-12 justify-items-center gap-2 gap-y-4 py-8">
       <div className="col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4">
         <div className="flex w-full flex-col">
           <div className="relative">

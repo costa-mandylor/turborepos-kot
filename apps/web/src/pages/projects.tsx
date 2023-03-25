@@ -5,26 +5,28 @@ import { projectDetails } from "../dataSource";
 import ProjectItem from "../components/projectItem";
 import { dehydrate, QueryClient, useQuery } from "@tanstack/react-query";
 import { getProject, IProject, PROJECT } from "@/actions/project";
+import { Title } from "../components/atom";
 
 const Projects = () => {
   const { data } = useQuery<IProject>({
     queryKey: [PROJECT],
   });
 
+  const stacks = data?.attributes?.stack?.data;
+  const projects = data?.attributes?.programs?.data;
+
   return (
     <>
       <BaseLayout>
         <main className="max-width container mx-auto pt-10 pb-20">
           <section>
-            <h1 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
-              Tech Stack
-            </h1>
+            <Title title="Tech Stack" />
             <p className="text-content py-2 lg:max-w-3xl">
               Technologies I&apos;ve been working with recently
             </p>
           </section>
           <section className="grid grid-cols-4 items-center justify-center gap-10 pt-6 md:grid-cols-5 lg:grid-cols-6">
-            {data?.attributes?.stack?.data?.map((item, i) => {
+            {stacks?.map((item, i) => {
               return (
                 <a
                   target="_blank"
@@ -49,22 +51,24 @@ const Projects = () => {
             </h1>
             <div className="grid grid-cols-1 gap-x-10 md:grid-cols-2 lg:grid-cols-3">
               {React.Children.toArray(
-                projectDetails.map(
+                projects?.map(
                   (
                     {
-                      title,
-                      image,
-                      description,
-                      techstack,
-                      previewLink,
-                      githubLink,
+                      attributes: {
+                        title,
+                        image,
+                        description,
+                        techstack,
+                        previewLink,
+                        githubLink,
+                      },
                     },
                     i
                   ) => (
                     <ProjectItem
                       key={i}
                       title={title}
-                      image={image}
+                      image={image?.data?.[0]?.attributes?.url}
                       description={description}
                       techstack={techstack}
                       previewLink={previewLink}

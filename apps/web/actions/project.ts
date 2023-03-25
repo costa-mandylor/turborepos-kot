@@ -8,6 +8,25 @@ export type IProject = {
         attributes: IImage["data"]["attributes"];
       }[];
     };
+    programs: {
+      data: {
+        attributes: {
+          createdAt: Date;
+          description: string;
+          githubLink: string;
+          image: {
+            data: {
+              attributes: IImage["data"]["attributes"];
+            }[];
+          };
+          previewLink: string;
+          publishedAt: Date;
+          techstack: string;
+          title: string;
+          updatedAt: string;
+        };
+      }[];
+    };
   };
 };
 
