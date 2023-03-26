@@ -16,8 +16,8 @@ type PROPS = {
 
 const ProgramItem = ({ title, image, description, techstack, previewLink, githubLink }: PROPS) => {
   return (
-    <article className="grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1.3fr,2fr] xl:grid-rows-[1.5fr,2fr] 2xl:grid-rows-[1fr,2fr]">
-      <div className="relative row-span-1 h-full w-full">
+    <article className="grid grid-rows-[1fr 3.5fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2.7fr] lg:grid-rows-[1fr,2.7fr] xl:grid-rows-[1fr,2.7fr] 2xl:grid-rows-[1fr,2.6fr]">
+      <div className="relative row-span-1 h-56 w-full">
         <Image src={image} alt="" fill />
       </div>
       <div className="dark:bg-dark-card flex flex-col justify-between p-4">
