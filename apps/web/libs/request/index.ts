@@ -1,5 +1,5 @@
-import axios from "axios";
-import qs from "qs";
+import axios from 'axios';
+import qs from 'qs';
 
 export const request = axios.create({
   baseURL: process.env.NEXT_PUBLIC_CMS_API_URL,
@@ -12,7 +12,7 @@ export const request = axios.create({
   },
 });
 
-request.defaults.headers.common["Content-Type"] = "application/json";
+request.defaults.headers.common['Content-Type'] = 'application/json';
 
 // export const refreshAccessTokenFn = async () => {
 //   const response = await authApi.get<ILoginResponse>('auth/refresh');
@@ -34,11 +34,11 @@ request.interceptors.response.use(
   async (error) => {
     const originalRequest = error.config;
     const errMessage = error.response.data.message as string;
-    if (errMessage.includes("not logged in") && !originalRequest._retry) {
+    if (errMessage.includes('not logged in') && !originalRequest._retry) {
       originalRequest._retry = true;
       // await refreshAccessTokenFn();
       return request(originalRequest);
     }
     return Promise.reject(error);
-  }
+  },
 );

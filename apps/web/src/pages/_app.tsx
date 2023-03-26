@@ -1,16 +1,20 @@
-import { useState } from "react";
-import {
-  Hydrate,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
-import Head from "next/head";
+import { useEffect, useState } from 'react';
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import Head from 'next/head';
 
-import type { AppProps } from "next/app";
-import "../styles/globals.css";
+import { GrowthBookProvider } from '@growthbook/growthbook-react';
+
+import type { AppProps } from 'next/app';
+import '../styles/globals.css';
+import { growthbook } from '@/libs/growthBook';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
+
+  useEffect(() => {
+    // Load features asynchronously when the app renders
+    growthbook.loadFeatures();
+  }, []);
 
   return (
     <>
@@ -22,7 +26,9 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
-          <Component {...pageProps} />
+          <GrowthBookProvider growthbook={growthbook}>
+            <Component {...pageProps} />
+          </GrowthBookProvider>
         </Hydrate>
       </QueryClientProvider>
     </>

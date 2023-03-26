@@ -6,6 +6,38 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
+    "web#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "NEXT_PUBLIC_CMS_API_URL",
+        "NEXT_PUBLIC_CMS_AUTH_TOKEN",
+        "NEXT_PUBLIC_GROWTHBOOK_API",
+        "NEXT_PUBLIC_GROWTHBOOK_KEY"
+      ],
+      "outputs": [".next/**", "!.next/cache/**"]
+    },
+    "cms#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "HOST",
+        "PORT",
+        "APP_KEYS",
+        "API_TOKEN_SALT",
+        "ADMIN_JWT_SECRET",
+        "JWT_SECRET",
+        "TWITTER_BEARER_TOKEN",
+        "DATABASE_HOST",
+        "DATABASE_PORT",
+        "DATABASE_NAME",
+        "DATABASE_USERNAME",
+        "DATABASE_PASSWORD",
+        "GENERATE_NEW_JSON_FILE_ON_UPDATE",
+        "CLOUDINARY_NAME",
+        "CLOUDINARY_KEY",
+        "CLOUDINARY_SECRET"
+      ],
+      "outputs": ["dist/**"]
+    },
     "lint": {},
     "tsc": {},
     "test": {},
@@ -16,6 +48,5 @@
     "clean": {
       "cache": false
     }
-  },
-  "globalEnv": ["NEXT_PUBLIC_CMS_API_URL", "NEXT_PUBLIC_CMS_AUTH_TOKEN"]
+  }
 }

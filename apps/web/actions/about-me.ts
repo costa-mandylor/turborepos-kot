@@ -1,5 +1,5 @@
-import { request } from "@/services/request/cms-request";
-import { IImage, ILocale } from "./types";
+import { request } from '@/libs/request';
+import { IImage, ILocale } from './types';
 
 export type IAboutMe = {
   attributes: {
@@ -41,10 +41,10 @@ export type IAboutMe = {
   };
 };
 
-export const ABOUT_ME = "about-me";
+export const ABOUT_ME = 'about-me';
 
 export const getAboutMe = async () => {
-  const { data } = await request.get<IAboutMe>("/about-me?populate=deep");
+  const { data } = await request.get<IAboutMe>('/about-me?populate=deep');
 
   return data;
 };

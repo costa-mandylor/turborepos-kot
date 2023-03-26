@@ -1,11 +1,11 @@
-import { request } from "@/services/request/cms-request";
-import { IImage } from "./types";
+import { request } from '@/libs/request';
+import { IImage } from './types';
 
 export type IProject = {
   attributes: {
     stack: {
       data: {
-        attributes: IImage["data"]["attributes"];
+        attributes: IImage['data']['attributes'];
       }[];
     };
     programs: {
@@ -16,7 +16,7 @@ export type IProject = {
           githubLink: string;
           image: {
             data: {
-              attributes: IImage["data"]["attributes"];
+              attributes: IImage['data']['attributes'];
             }[];
           };
           previewLink: string;
@@ -30,10 +30,10 @@ export type IProject = {
   };
 };
 
-export const PROJECT = "project";
+export const PROJECT = 'project';
 
 export const getProject = async () => {
-  const { data } = await request.get<IProject>("/project?populate=deep");
+  const { data } = await request.get<IProject>('/project?populate=deep');
 
   return data;
 };
