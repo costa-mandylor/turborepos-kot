@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
-import image from "public/projects/project1.jpg";
-import ReactMarkdown from "react-markdown";
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import image from 'public/projects/project1.jpg';
+import ReactMarkdown from 'react-markdown';
 
 type PROPS = {
   title: string;
@@ -13,34 +13,23 @@ type PROPS = {
   githubLink: string;
 };
 
-const ProjectItems = ({
-  title,
-  image,
-  description,
-  techstack,
-  previewLink,
-  githubLink,
-}: PROPS) => {
+const ProgramItem = ({ title, image, description, techstack, previewLink, githubLink }: PROPS) => {
   return (
-    <article className="mt-10 grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1.3fr,2fr] xl:grid-rows-[1.5fr,2fr] 2xl:grid-rows-[1fr,2fr]">
+    <article className="grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1.3fr,2fr] xl:grid-rows-[1.5fr,2fr] 2xl:grid-rows-[1fr,2fr]">
       <div className="relative row-span-1 h-full w-full">
         <Image src={image} alt="" fill />
       </div>
-      <div className="flex flex-col justify-between p-4 dark:bg-dark-card">
-        <h1 className="pb-2 text-lg font-semibold dark:text-light-heading">
-          {title}
-        </h1>
-        <ReactMarkdown className="text-content pb-2 font-light">
-          {description}
-        </ReactMarkdown>
+      <div className="dark:bg-dark-card flex flex-col justify-between p-4">
+        <h1 className="dark:text-light-heading pb-2 text-lg font-semibold">{title}</h1>
+        <ReactMarkdown className="text-content pb-2 font-light">{description}</ReactMarkdown>
         <div className="mt-auto flex h-28 flex-col justify-between">
-          <h3 className="pb-4 font-medium text-dark-heading dark:text-light-heading">
+          <h3 className="text-dark-heading dark:text-light-heading pb-4 font-medium">
             Tech Stack : <span className="font-light">{techstack}</span>
           </h3>
           <div className="flex flex-wrap justify-between">
             <div className="flex items-center">
               <svg
-                className="inline-block min-w-fit stroke-dark-heading dark:stroke-white"
+                className="stroke-dark-heading inline-block min-w-fit dark:stroke-white"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -60,17 +49,13 @@ const ProjectItems = ({
                   strokeLinejoin="round"
                 />
               </svg>
-              <a
-                target={"_blank"}
-                href={previewLink}
-                className="pl-2 font-light underline dark:text-white"
-              >
+              <a target={'_blank'} href={previewLink} className="pl-2 font-light underline dark:text-white">
                 Live Preview
               </a>
             </div>
             <div className="flex items-center">
               <svg
-                className="inline-block min-w-fit fill-dark-heading dark:fill-light-heading"
+                className="fill-dark-heading dark:fill-light-heading inline-block min-w-fit"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -85,7 +70,7 @@ const ProjectItems = ({
               </svg>
 
               <Link
-                href={githubLink || ""}
+                href={githubLink || ''}
                 rel="noreferrer noopener"
                 className="pl-2 font-light underline dark:text-white"
               >
@@ -99,4 +84,4 @@ const ProjectItems = ({
   );
 };
 
-export default ProjectItems;
+export default ProgramItem;

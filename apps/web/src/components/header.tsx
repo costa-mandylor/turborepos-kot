@@ -1,9 +1,10 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import { socialMediaUrl } from "../dataSource";
-import Drawer from "./molecules/Drawer";
+import React, { useState } from 'react';
+import Link from 'next/link';
+import { socialMediaUrl } from '../dataSource';
+// import Drawer from './Drawer';
+import { Drawer } from 'ui';
 
-function Header() {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -33,12 +34,8 @@ function Header() {
         </div>
       </div>
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <nav
-          className={` ${
-            !isOpen ? "hidden" : null
-          } justify-between text-center md:flex`}
-        >
-          <ul className="items-center font-medium dark:text-light-content md:mr-10 md:flex md:space-x-5">
+        <nav className={` ${!isOpen ? 'hidden' : null} justify-between text-center md:flex`}>
+          <ul className="dark:text-light-content items-center font-medium md:mr-10 md:flex md:space-x-5">
             <li className="pb-1 md:pb-0">
               <Link href="/">Home</Link>
             </li>
@@ -57,11 +54,7 @@ function Header() {
           </ul>
           <ul className="my-5 flex items-center justify-evenly md:my-0 md:mr-5 md:space-x-5">
             <li>
-              <Link
-                href={socialMediaUrl.twitter}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <Link href={socialMediaUrl.twitter} target="_blank" rel="noreferrer noopener">
                 <svg
                   className="fill-dark-heading dark:fill-light-heading"
                   width="32"
@@ -75,11 +68,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href={socialMediaUrl.linkdein}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <Link href={socialMediaUrl.linkdein} target="_blank" rel="noreferrer noopener">
                 <svg
                   className="fill-dark-heading dark:fill-light-heading"
                   width="30"
@@ -93,11 +82,7 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link
-                href={socialMediaUrl.github}
-                target="_blank"
-                rel="noreferrer noopener"
-              >
+              <Link href={socialMediaUrl.github} target="_blank" rel="noreferrer noopener">
                 <svg
                   className="fill-dark-heading dark:fill-light-heading"
                   width="30"
@@ -117,10 +102,8 @@ function Header() {
           </ul>
         </nav>
       </Drawer>
-      <nav
-        className={`md:display hidden justify-between text-center sm:hidden md:flex`}
-      >
-        <ul className="items-center font-medium dark:text-light-content md:mr-10 md:flex md:space-x-5">
+      <nav className="md:display hidden justify-between text-center sm:hidden md:flex">
+        <ul className="dark:text-light-content items-center font-medium md:mr-10 md:flex md:space-x-5">
           <li className="pb-1 md:pb-0">
             <Link href="/">Home</Link>
           </li>
@@ -139,11 +122,7 @@ function Header() {
         </ul>
         <ul className="my-5 flex items-center justify-evenly md:my-0 md:mr-5 md:space-x-5">
           <li>
-            <Link
-              href={socialMediaUrl.twitter}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <Link href={socialMediaUrl.twitter} target="_blank" rel="noreferrer noopener">
               <svg
                 className="fill-dark-heading dark:fill-light-heading"
                 width="32"
@@ -157,11 +136,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              href={socialMediaUrl.linkdein}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <Link href={socialMediaUrl.linkdein} target="_blank" rel="noreferrer noopener">
               <svg
                 className="fill-dark-heading dark:fill-light-heading"
                 width="30"
@@ -175,11 +150,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link
-              href={socialMediaUrl.github}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <Link href={socialMediaUrl.github} target="_blank" rel="noreferrer noopener">
               <svg
                 className="fill-dark-heading dark:fill-light-heading"
                 width="30"
@@ -200,6 +171,6 @@ function Header() {
       </nav>
     </header>
   );
-}
+};
 
 export default Header;

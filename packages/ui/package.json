@@ -16,7 +16,8 @@
     "tsc": "tsc --noEmit"
   },
   "peerDependencies": {
-    "react": "^18.2.0"
+    "react": "^18.2.0",
+    "tsup": "6.6.3"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

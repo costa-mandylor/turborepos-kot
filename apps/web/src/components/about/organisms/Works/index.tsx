@@ -1,8 +1,8 @@
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import { ABOUT_ME, IAboutMe } from "@/actions/about-me";
-import { Detail } from "../../molecules";
-import { Title } from "@/src/components/atom";
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import { ABOUT_ME, IAboutMe } from '@/actions/about-me';
+import { Detail } from '../../molecules';
+import { Title } from 'ui';
 
 const Works = () => {
   const { data } = useQuery<IAboutMe>({
@@ -10,24 +10,11 @@ const Works = () => {
   });
 
   return (
-    <section>
+    <section className="pb-8">
       <Title title="Work Experience" />
       {React.Children.toArray(
         data?.attributes?.works?.data?.map(
-          (
-            {
-              attributes: {
-                company,
-                position,
-                locations,
-                title,
-                dateTo,
-                dateFrom,
-                logo,
-              },
-            }: any,
-            i: React.Key
-          ) => (
+          ({ attributes: { company, position, locations, title, dateTo, dateFrom, logo } }: any, i: React.Key) => (
             <Detail
               key={i}
               position={title}
@@ -38,8 +25,8 @@ const Works = () => {
               dateFrom={dateFrom}
               logo={logo}
             />
-          )
-        )
+          ),
+        ),
       )}
     </section>
   );

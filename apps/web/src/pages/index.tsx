@@ -1,8 +1,8 @@
-import React from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import BaseLayout from "../components/baseLayout";
-import { personalDetails } from "../dataSource";
+import React from 'react';
+import Image from 'next/image';
+import { motion } from 'framer-motion';
+import BaseLayout from '../components/baseLayout';
+import { personalDetails } from '../dataSource';
 
 const MotionDiv = ({
   children,
@@ -18,11 +18,11 @@ const MotionDiv = ({
   return (
     <motion.div
       initial={{
-        x: x ?? "-100%",
+        x: x ?? '-100%',
         opacity: 0,
         scale: 0.5,
       }}
-      animate={{ x: "0", opacity: 1, scale: 1 }}
+      animate={{ x: '0', opacity: 1, scale: 1 }}
       transition={{ duration, delay: delay }}
     >
       {children}
@@ -34,10 +34,10 @@ const Index = () => {
   return (
     <>
       <BaseLayout>
-        <main className="max-width section container mx-auto flex items-center gap-10 justify-between flex-col sm:flex-col md:flex-row lg:flex-row">
+        <main className="max-width section container mx-auto flex flex-col items-center justify-between gap-10 sm:flex-col md:flex-row lg:flex-row">
           <div>
             <MotionDiv duration={1} delay={0.8}>
-              <h1 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
+              <h1 className="text-dark-heading dark:text-light-heading text-2xl font-bold md:text-4xl xl:text-5xl xl:leading-tight">
                 Hi,👋<br></br>My Name is<br></br>
               </h1>
             </MotionDiv>
@@ -47,7 +47,7 @@ const Index = () => {
               </h1>
             </MotionDiv>
             <MotionDiv duration={0.8} delay={0.5}>
-              <h2 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
+              <h2 className="text-dark-heading dark:text-light-heading text-2xl font-bold md:text-4xl xl:text-5xl xl:leading-tight">
                 {personalDetails.tagline}
               </h2>
             </MotionDiv>
@@ -55,9 +55,9 @@ const Index = () => {
           <MotionDiv duration={0.8} delay={0.5} x="400%">
             <div
               style={{
-                position: "relative",
-                width: "250px",
-                height: "260px",
+                position: 'relative',
+                width: '250px',
+                height: '260px',
               }}
             >
               <Image

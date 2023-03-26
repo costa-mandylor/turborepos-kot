@@ -39,12 +39,7 @@
       "type": "media",
       "multiple": false,
       "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ],
+      "allowedTypes": ["images", "files", "videos", "audios"],
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -66,11 +61,7 @@
         }
       },
       "type": "enumeration",
-      "enum": [
-        "Full Time",
-        "Part time",
-        "Remote"
-      ]
+      "enum": ["Full Time", "Part time", "Remote"]
     },
     "dateTo": {
       "pluginOptions": {

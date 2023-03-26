@@ -1,9 +1,8 @@
-import React from "react";
-import { dehydrate, QueryClient } from "@tanstack/react-query";
-
-import { ABOUT_ME, getAboutMe } from "@/actions/about-me";
-import BaseLayout from "@components/baseLayout";
-import { Info, Works, Education } from "@components/about/organisms";
+import React from 'react';
+import { dehydrate, QueryClient } from '@tanstack/react-query';
+import { ABOUT_ME, getAboutMe } from '@/actions/about-me';
+import BaseLayout from '@components/baseLayout';
+import { Info, Works, Education } from '@components/about/organisms';
 
 const About = () => {
   return (
@@ -28,6 +27,6 @@ export async function getStaticProps() {
     props: {
       dehydratedState: dehydrate(queryClient),
     },
-    revalidate: 30
+    revalidate: 30,
   };
 }

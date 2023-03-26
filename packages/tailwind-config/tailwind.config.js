@@ -1,4 +1,4 @@
-const colors = require("tailwindcss/colors");
+const colors = require('tailwindcss/colors');
 
 module.exports = {
   content: [
@@ -10,16 +10,16 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        primary: "Poppins, sans-serif",
+        primary: 'Poppins, sans-serif',
       },
       colors: {
-        "light-content": "#A7A7A7",
-        "dark-heading": "#1f2428",
-        "dark-content": "#666666",
-        "light-heading": "#CCCCCC",
-        "dark-mode": "#191919",
-        "dark-card": "#363636",
-        "green-text": "#018C0F",
+        'light-content': '#A7A7A7',
+        'dark-heading': '#1f2428',
+        'dark-content': '#666666',
+        'light-heading': '#CCCCCC',
+        'dark-mode': '#191919',
+        'dark-card': '#363636',
+        'green-text': '#018C0F',
         brandblue: colors.blue[500],
         brandred: colors.red[500],
       },
