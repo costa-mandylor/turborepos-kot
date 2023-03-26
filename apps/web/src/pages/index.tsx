@@ -34,7 +34,7 @@ const Index = () => {
   return (
     <>
       <BaseLayout>
-        <main className="max-width section container mx-auto items-center justify-between md:flex">
+        <main className="max-width section container mx-auto flex items-center gap-10 justify-between flex-col sm:flex-col md:flex-row lg:flex-row">
           <div>
             <MotionDiv duration={1} delay={0.8}>
               <h1 className="text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">

@@ -22,12 +22,7 @@ const ProjectItems = ({
   githubLink,
 }: PROPS) => {
   return (
-    <article
-      className="mt-10 grid overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900"
-      style={{
-        gridTemplateRows: "1fr 2fr",
-      }}
-    >
+    <article className="mt-10 grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1fr,2fr] xl:grid-rows-[1fr,2fr] 2xl:grid-rows-[1fr,2fr]">
       <div className="relative row-span-1 h-full w-full">
         <Image src={image} alt="" fill />
       </div>
@@ -38,7 +33,7 @@ const ProjectItems = ({
         <ReactMarkdown className="text-content pb-2 font-light">
           {description}
         </ReactMarkdown>
-        <div className="mt-auto h-28 flex flex-col justify-between">
+        <div className="mt-auto flex h-28 flex-col justify-between">
           <h3 className="pb-4 font-medium text-dark-heading dark:text-light-heading">
             Tech Stack : <span className="font-light">{techstack}</span>
           </h3>
