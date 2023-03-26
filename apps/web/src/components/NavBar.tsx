@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 import { socialMediaUrl } from '../dataSource';
 
-const NavBar = () => {
+const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
-    <nav className="md:display hidden justify-between text-center sm:hidden md:flex">
+    <nav className={`${isDesktop ? 'md:display hidden sm:hidden' : 'display'} justify-between text-center md:flex`}>
       <ul className="dark:text-light-content items-center font-medium md:mr-10 md:flex md:space-x-5">
         <li className="pb-1 md:pb-0">
           <Link href="/">Home</Link>

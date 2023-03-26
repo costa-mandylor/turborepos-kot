@@ -34,9 +34,9 @@ const Header = () => {
           </svg>
         </div>
       </div>
-      <NavBar />
+      <NavBar isDesktop />
       <Drawer isOpen={isOpen} setIsOpen={setIsOpen}>
-        <NavBar />
+        <NavBar isDesktop={false} />
       </Drawer>
     </header>
   );
