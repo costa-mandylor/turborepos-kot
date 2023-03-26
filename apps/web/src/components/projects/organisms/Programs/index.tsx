@@ -1,9 +1,12 @@
 import React from 'react';
 
-import { useQuery } from '@tanstack/react-query';
-import { IProject, PROJECT } from '@/actions/project';
-import { ProgramItem } from '../../molecules';
 import { Title } from 'ui';
+
+import { useQuery } from '@tanstack/react-query';
+
+import { IProject, PROJECT } from '@/actions/project';
+
+import { ProgramItem } from '../../molecules';
 
 const Programs = () => {
   const { data } = useQuery<IProject>({

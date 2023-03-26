@@ -1,8 +1,10 @@
 import React from 'react';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { ABOUT_ME, getAboutMe } from '@/actions/about-me';
+
+import { Education, Info, Works } from '@components/about/organisms';
 import BaseLayout from '@components/baseLayout';
-import { Info, Works, Education } from '@components/about/organisms';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
+
+import { ABOUT_ME, getAboutMe } from '@/actions/about-me';
 
 const About = () => {
   return (

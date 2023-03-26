@@ -1,6 +1,8 @@
 import React from 'react';
-import Image from 'next/image';
+
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+
 import BaseLayout from '../components/baseLayout';
 import { personalDetails } from '../dataSource';
 
@@ -23,8 +25,7 @@ const MotionDiv = ({
         scale: 0.5,
       }}
       animate={{ x: '0', opacity: 1, scale: 1 }}
-      transition={{ duration, delay: delay }}
-    >
+      transition={{ duration, delay: delay }}>
       {children}
     </motion.div>
   );
@@ -58,8 +59,7 @@ const Index = () => {
                 position: 'relative',
                 width: '250px',
                 height: '260px',
-              }}
-            >
+              }}>
               <Image
                 src="/profile.png"
                 alt="Kot"

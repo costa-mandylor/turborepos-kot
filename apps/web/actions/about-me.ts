@@ -1,4 +1,5 @@
 import { request } from '@/libs/request';
+
 import { IImage, ILocale } from './types';
 
 export type IAboutMe = {

@@ -1,8 +1,10 @@
 import React from 'react';
+
 import BaseLayout from '@components/baseLayout';
-import { dehydrate, QueryClient } from '@tanstack/react-query';
-import { getProject, PROJECT } from '@/actions/project';
 import { Programs, TechStack } from '@components/projects/organisms';
+import { QueryClient, dehydrate } from '@tanstack/react-query';
+
+import { PROJECT, getProject } from '@/actions/project';
 
 const Projects = () => {
   return (

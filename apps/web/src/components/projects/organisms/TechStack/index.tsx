@@ -1,8 +1,11 @@
 import React from 'react';
-import Image from 'next/image';
-import { useQuery } from '@tanstack/react-query';
-import { IProject, PROJECT } from '@/actions/project';
+
 import { Title } from 'ui';
+
+import { useQuery } from '@tanstack/react-query';
+import Image from 'next/image';
+
+import { IProject, PROJECT } from '@/actions/project';
 
 const TechStack = () => {
   const { data } = useQuery<IProject>({

@@ -1,8 +1,12 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { ABOUT_ME, IAboutMe } from '@/actions/about-me';
-import { Detail } from '../../molecules';
+
 import { Title } from 'ui';
+
+import { useQuery } from '@tanstack/react-query';
+
+import { ABOUT_ME, IAboutMe } from '@/actions/about-me';
+
+import { Detail } from '../../molecules';
 
 const Works = () => {
   const { data } = useQuery<IAboutMe>({

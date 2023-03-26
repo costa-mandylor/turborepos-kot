@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
-import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import Head from 'next/head';
 
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
-
+import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
-import '../styles/globals.css';
+import Head from 'next/head';
+
 import { growthbook } from '@/libs/growthBook';
+
+import '../styles/globals.css';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());

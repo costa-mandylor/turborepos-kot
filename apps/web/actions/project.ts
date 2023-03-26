@@ -1,4 +1,5 @@
 import { request } from '@/libs/request';
+
 import { IImage } from './types';
 
 export type IProject = {

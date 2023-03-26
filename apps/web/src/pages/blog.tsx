@@ -1,7 +1,9 @@
 import React from 'react';
-import BaseLayout from '../components/baseLayout';
-import { BlogItem } from '@components/blog/organisms';
+
 import { Title } from 'ui';
+
+import BaseLayout from '@components/baseLayout';
+import { BlogItem } from '@components/blog/organisms';
 
 const Blog = () => {
   return (
