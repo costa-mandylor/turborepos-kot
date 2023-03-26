@@ -48,7 +48,7 @@ const Projects = () => {
             <h1 className="pt-10 text-2xl font-bold text-dark-heading dark:text-light-heading md:text-4xl xl:text-5xl xl:leading-tight">
               Projects
             </h1>
-            <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-3">
+            <div className="grid grid-cols-1 gap-x-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3">
               {React.Children.toArray(
                 projects?.map(
                   (

@@ -22,7 +22,7 @@ const ProjectItems = ({
   githubLink,
 }: PROPS) => {
   return (
-    <article className="mt-10 grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1fr,2fr] xl:grid-rows-[1fr,2fr] 2xl:grid-rows-[1fr,2fr]">
+    <article className="mt-10 grid grid-rows-[1fr,2fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2fr] lg:grid-rows-[1.3fr,2fr] xl:grid-rows-[1.5fr,2fr] 2xl:grid-rows-[1fr,2fr]">
       <div className="relative row-span-1 h-full w-full">
         <Image src={image} alt="" fill />
       </div>

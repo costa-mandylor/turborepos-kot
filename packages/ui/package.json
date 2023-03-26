@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "check-types": "tsc --noEmit"
+    "tsc": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^18.2.0"
