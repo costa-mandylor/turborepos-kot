@@ -1,10 +1,10 @@
 import React from 'react';
 
+import BaseLayout from '@components/BaseLayout';
 import { Education, Info, Works } from '@components/about/organisms';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 
 import { ABOUT_ME, getAboutMe } from '@/actions/about-me';
-import BaseLayout from '@/components/BaseLayout';
 
 const About = () => {
   return (
