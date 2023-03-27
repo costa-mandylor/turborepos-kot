@@ -9,19 +9,15 @@ type PROPS = {
 const Drawer = ({ children, isOpen, setIsOpen }: PROPS) => {
   return (
     <main
-      className={
-        ' fixed inset-0 z-10 transform overflow-hidden ease-in-out ' +
-        (isOpen
+      className={` fixed inset-0 z-10 transform overflow-hidden ease-in-out ${
+        isOpen
           ? ' translate-x-0 opacity-100 transition-opacity duration-500 '
-          : ' translate-x-full opacity-0 transition-all delay-500 ')
-      }
-    >
+          : ' translate-x-full opacity-0 transition-all delay-500 '
+      }`}>
       <section
-        className={
-          ' delay-400 dark:bg-dark-mode absolute right-0 h-full w-screen max-w-sm transform bg-white shadow-xl transition-all duration-500 ease-in-out  ' +
-          (isOpen ? ' translate-x-0 ' : ' translate-x-full ')
-        }
-      >
+        className={` delay-400 dark:bg-dark-mode absolute right-0 h-full w-screen max-w-sm transform bg-white shadow-xl transition-all duration-500 ease-in-out  ${
+          isOpen ? ' translate-x-0 ' : ' translate-x-full '
+        }`}>
         <article className="relative flex h-full w-screen max-w-sm flex-col space-y-6 overflow-y-scroll pb-10">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,8 +26,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: PROPS) => {
             strokeWidth={1.8}
             stroke="currentColor"
             className="stroke-dark-heading h-10 w-10 p-1 dark:stroke-white"
-            onClick={() => setIsOpen((e: boolean) => !e)}
-          >
+            onClick={() => setIsOpen((value: boolean) => !value)}>
             <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
           </svg>
 
@@ -42,8 +37,7 @@ const Drawer = ({ children, isOpen, setIsOpen }: PROPS) => {
         className="h-full w-screen cursor-pointer"
         onClick={() => {
           setIsOpen(false);
-        }}
-      ></section>
+        }}></section>
     </main>
   );
 };

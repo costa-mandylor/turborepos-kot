@@ -11,7 +11,7 @@ const IconsPreview: React.FC = () => {
           display: 'flex',
           gap: '10px',
         }}>
-        {Object.values(Icons as unknown as []).map((IconComponent: any, keys: number) => {
+        {Object.values(Icons).map((IconComponent, keys: number) => {
           return (
             <div key={keys}>
               <div
@@ -23,7 +23,7 @@ const IconsPreview: React.FC = () => {
                   gap: 10,
                   textAlign: 'center',
                 }}>
-                <IconComponent />
+                {IconComponent && <IconComponent />}
                 <span
                   style={{
                     color: '#797588',
