@@ -6,7 +6,7 @@ export type IAboutMe = {
   attributes: {
     desc: string;
     educations: {
-      data: {
+      data: Array<{
         id: number;
         attributes: {
           dateFrom: Date;
@@ -17,10 +17,10 @@ export type IAboutMe = {
           updatedAt: Date;
           locale: ILocale;
         };
-      }[];
+      }>;
     };
     works: {
-      data: {
+      data: Array<{
         id: number;
         attributes: {
           company: string;
@@ -37,7 +37,7 @@ export type IAboutMe = {
             data: [];
           };
         };
-      }[];
+      }>;
     };
   };
 };

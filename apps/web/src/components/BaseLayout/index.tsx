@@ -1,6 +1,6 @@
 import { ToastContainer } from 'react-toastify';
 
-import Header from './header';
+import Header from '../Header';
 
 const BaseLayout = ({ children }: { children: JSX.Element }) => {
   return (

@@ -3,7 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import BaseLayout from '../components/baseLayout';
+import BaseLayout from '../components/BaseLayout';
 import { personalDetails } from '../dataSource';
 
 const MotionDiv = ({

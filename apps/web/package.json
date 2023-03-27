@@ -1,7 +1,6 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -31,10 +30,8 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^8.0.6",
     "react-toastify": "^9.1.1",
-    "ui": "*"
-  },
-  "peerDependencies": {
-    "ui": "*"
+    "ui": "*",
+    "icons-web": "*"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
@@ -45,7 +42,6 @@
     "postcss": "^8.4.20",
     "tailwind-config": "*",
     "tailwindcss": "^3.2.4",
-    "tsconfig": "*",
-    "typescript": "^4.9.4"
+    "tsconfig": "*"
   }
 }

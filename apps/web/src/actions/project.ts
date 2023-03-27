@@ -5,20 +5,20 @@ import { IImage } from './types';
 export type IProject = {
   attributes: {
     stack: {
-      data: {
+      data: Array<{
         attributes: IImage['data']['attributes'];
-      }[];
+      }>;
     };
     programs: {
-      data: {
+      data: Array<{
         attributes: {
           createdAt: Date;
           description: string;
           githubLink: string;
           image: {
-            data: {
+            data: Array<{
               attributes: IImage['data']['attributes'];
-            }[];
+            }>;
           };
           previewLink: string;
           publishedAt: Date;
@@ -26,7 +26,7 @@ export type IProject = {
           title: string;
           updatedAt: string;
         };
-      }[];
+      }>;
     };
   };
 };

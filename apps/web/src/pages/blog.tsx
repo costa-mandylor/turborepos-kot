@@ -2,8 +2,9 @@ import React from 'react';
 
 import { Title } from 'ui';
 
-import BaseLayout from '@components/baseLayout';
 import { BlogItem } from '@components/blog/organisms';
+
+import BaseLayout from '@/components/BaseLayout';
 
 const Blog = () => {
   return (

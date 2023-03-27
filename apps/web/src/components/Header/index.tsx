@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 
-import { Drawer } from 'ui';
-
 import Link from 'next/link';
 
-import NavBar from './NavBar';
+import Drawer from '../Drawer';
+import NavBar from '../NavBar';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +16,7 @@ const Header = () => {
             Kot DEV
           </div>
         </Link>
-        <div className="cursor-pointer" onClick={() => setIsOpen((e) => !e)}>
+        <div className="cursor-pointer" onClick={() => setIsOpen((value) => !value)}>
           <svg
             className="stroke-dark-heading dark:stroke-white md:hidden"
             width="25"

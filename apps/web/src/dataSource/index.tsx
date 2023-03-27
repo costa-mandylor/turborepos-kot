@@ -5,12 +5,13 @@ export const personalDetails = {
 };
 
 // Tech Stack and Tools
-export const techStackDetails: {
-  [key: string]: {
+export const techStackDetails: Record<
+  string,
+  {
     image: string;
     title: string;
-  };
-} = {
+  }
+> = {
   html: { image: '/techstack/html.png', title: 'html' },
   css: { image: '/techstack/css.png', title: 'css' },
   js: { image: '/techstack/js.png', title: 'js' },
@@ -27,8 +28,8 @@ export const techStackDetails: {
 };
 
 export const socialMediaUrl = {
-  linkdein: 'https://www.linkedin.com/',
-  github: 'https://www.github.com/',
+  linkdein: 'https://www.linkedin.com/in/duc-bui-xuan-04b37b245/',
+  github: 'https://github.com/costa-mandylor/turborepos-kot',
   twitter: 'https://twitter.com/',
   instagram: 'https://www.instagram.com/',
 };

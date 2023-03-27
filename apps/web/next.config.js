@@ -4,5 +4,5 @@ module.exports = {
   images: {
     domains: ['res.cloudinary.com', 'picsum.photos'],
   },
-  transpilePackages: ['ui'],
+  transpilePackages: ['ui', 'icons-web'],
 };

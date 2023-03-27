@@ -1,12 +1,15 @@
-import { Options, defineConfig } from 'tsup';
+import { defineConfig } from 'tsup';
 
-export default defineConfig((options: Options) => ({
-  splitting: true,
-  entry: ['src/**/*.tsx'],
-  format: ['esm'],
+const tsupConfig = defineConfig({
+  entry: ['src/index.ts'],
+  format: ['esm', 'cjs'],
   dts: true,
+  external: ['react', 'react-dom', 'antd'],
+  splitting: false,
   minify: true,
   clean: true,
-  external: ['react'],
-  ...options,
-}));
+  tsconfig: 'tsconfig.prod.json',
+});
+
+// eslint-disable-next-line import/no-default-export
+export default tsupConfig;

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BaseLayout from '../components/baseLayout';
+import BaseLayout from '../components/BaseLayout';
 import { contactDetails } from '../dataSource';
 
 function Contact() {

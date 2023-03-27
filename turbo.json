@@ -14,7 +14,7 @@
         "NEXT_PUBLIC_GROWTHBOOK_API",
         "NEXT_PUBLIC_GROWTHBOOK_KEY"
       ],
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
     },
     "cms#build": {
       "dependsOn": ["^build"],
