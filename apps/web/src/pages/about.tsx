@@ -4,7 +4,7 @@ import BaseLayout from '@components/BaseLayout';
 import { Education, Info, Works } from '@components/about/organisms';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 
-import { ABOUT_ME, getAboutMe } from '@/actions/about-me';
+import { ABOUT_ME, getAboutMe } from '@/service/about-me';
 
 const About = () => {
   return (

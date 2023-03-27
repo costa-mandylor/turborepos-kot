@@ -4,7 +4,7 @@ import BaseLayout from '@components/BaseLayout';
 import { Programs, TechStack } from '@components/projects/organisms';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 
-import { PROJECT, getProject } from '@/actions/project';
+import { PROJECT, getProject } from '@/service/project';
 
 const Projects = () => {
   return (
