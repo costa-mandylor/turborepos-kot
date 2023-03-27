@@ -4,7 +4,7 @@ import BaseLayout from '@components/BaseLayout';
 import { Programs, TechStack } from '@components/projects/organisms';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 
-import { PROJECT, getProject } from '@/service/project';
+import { ABOUT_ME, PROJECT, getAboutMe, getProject } from '@/service';
 
 const Projects = () => {
   return (
@@ -25,6 +25,7 @@ export async function getStaticProps() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery([PROJECT], getProject);
+  await queryClient.prefetchQuery([ABOUT_ME], getAboutMe);
 
   return {
     props: {

@@ -5,7 +5,7 @@ import { Title } from 'ui';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { ABOUT_ME, IAboutMe } from '@/service/about-me';
+import { ABOUT_ME, IAboutMe } from '@/service';
 
 const Info = () => {
   const { data } = useQuery<IAboutMe>({
