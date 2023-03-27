@@ -30,7 +30,7 @@ const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
       </ul>
       <ul className="my-5 flex items-center justify-evenly md:my-0 md:mr-5 md:space-x-5">
         <li>
-          <Link href={socialMediaUrl.twitter} target="_blank" rel="noreferrer noopener">
+          <Link href={socialMediaUrl.fb} target="_blank" rel="noreferrer noopener">
             <Facebook className="fill-dark-heading dark:fill-light-heading w-7 h-7" />
           </Link>
         </li>

@@ -47,6 +47,7 @@ This Turborepo has some additional tools already setup for you:
 - [Husky] Git hooks with Husky and lint-staged
 - [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) Commit messages must meet conventional commits format.
 - [GrowthBook](https://app.growthbook.io/) for management feature
+- [Storybook](https://storybook.js.org/) system UI
 
 ### Monorepo
 

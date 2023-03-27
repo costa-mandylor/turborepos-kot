@@ -30,8 +30,8 @@ export const techStackDetails: Record<
 export const socialMediaUrl = {
   linkdein: 'https://www.linkedin.com/in/duc-bui-xuan-04b37b245/',
   github: 'https://github.com/costa-mandylor/turborepos-kot',
-  twitter: 'https://twitter.com/',
-  instagram: 'https://www.instagram.com/',
+  fb: 'https://www.facebook.com/xJHhu4t0IGNvbiBt4bq5IG3DoHk/',
+  instagram: 'https://www.instagram.com/_kottttt/',
 };
 
 // Enter your Project Details here
