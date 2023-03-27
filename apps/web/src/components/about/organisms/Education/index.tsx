@@ -19,9 +19,9 @@ const Education = () => {
     <section>
       <Title title="Education" />
       {React.Children.toArray(
-        educations?.map(({ attributes: { dateFrom, dateTo, location, name } }, i) => (
+        educations?.map(({ attributes: { dateFrom, dateTo, location, name } }, key) => (
           <Detail
-            key={i}
+            key={key}
             position={name}
             company={''}
             location={location}

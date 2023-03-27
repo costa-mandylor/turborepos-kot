@@ -18,9 +18,9 @@ const Works = () => {
       <Title title="Work Experience" />
       {React.Children.toArray(
         data?.attributes?.works?.data?.map(
-          ({ attributes: { company, position, locations, title, dateTo, dateFrom, logo } }: any, i: React.Key) => (
+          ({ attributes: { company, position, locations, title, dateTo, dateFrom, logo } }, key: React.Key) => (
             <Detail
-              key={i}
+              key={key}
               position={title}
               company={company}
               location={locations}

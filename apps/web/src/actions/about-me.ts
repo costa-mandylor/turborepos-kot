@@ -24,7 +24,7 @@ export type IAboutMe = {
         id: number;
         attributes: {
           company: string;
-          dateFrom: string;
+          dateFrom: Date;
           title: string;
           position: string;
           dateTo: Date;
@@ -33,6 +33,7 @@ export type IAboutMe = {
           publishedAt: Date;
           locale: ILocale;
           logo: IImage;
+          locations: string;
           localizations: {
             data: [];
           };
