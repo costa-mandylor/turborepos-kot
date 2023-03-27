@@ -15,8 +15,8 @@ type PROPS = {
 
 const ProgramItem = ({ title, image, description, techstack, previewLink, githubLink }: PROPS) => {
   return (
-    <article className="grid grid-rows-[1fr 3.5fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2.7fr] lg:grid-rows-[1fr,2.7fr] xl:grid-rows-[1fr,2.7fr] 2xl:grid-rows-[1fr,2.6fr]">
-      <div className="relative row-span-1 h-56 w-full">
+    <article className="grid grid-rows-[1fr 3.5fr] overflow-hidden rounded-xl shadow-xl shadow-slate-300 dark:shadow-slate-900 sm:grid-rows-[1fr,2.7fr] lg:grid-rows-[1fr,2fr] xl:grid-rows-[1fr,2fr] 2xl:grid-rows-[1fr,2.6fr]">
+      <div className="relative row-span-1 h-64 w-full">
         <Image src={image} alt="" fill />
       </div>
       <div className="dark:bg-dark-card flex flex-col justify-between p-4">
@@ -34,8 +34,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
                 height="20"
                 viewBox="0 0 20 20"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M11.2867 8.7133C10.6041 8.031 9.67846 7.64771 8.71334 7.64771C7.74821 7.64771 6.82259 8.031 6.14 8.7133L3.56584 11.2866C2.88324 11.9692 2.49976 12.895 2.49976 13.8604C2.49976 14.8257 2.88324 15.7515 3.56584 16.4341C4.24844 17.1167 5.17424 17.5002 6.13959 17.5002C7.10493 17.5002 8.03074 17.1167 8.71334 16.4341L10 15.1475"
                   strokeWidth="1.66667"
@@ -53,8 +52,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
                 target={'_blank'}
                 href={previewLink}
                 className="pl-2 font-light underline dark:text-white"
-                rel="noreferrer"
-              >
+                rel="noreferrer">
                 Live Preview
               </a>
             </div>
@@ -65,8 +63,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
                 height="20"
                 viewBox="0 0 20 20"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+                xmlns="http://www.w3.org/2000/svg">
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -77,8 +74,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
               <Link
                 href={githubLink || ''}
                 rel="noreferrer noopener"
-                className="pl-2 font-light underline dark:text-white"
-              >
+                className="pl-2 font-light underline dark:text-white">
                 View Code
               </Link>
             </div>
