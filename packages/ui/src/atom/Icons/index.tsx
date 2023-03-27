@@ -23,7 +23,14 @@ const IconsPreview: React.FC = () => {
                   gap: 10,
                   textAlign: 'center',
                 }}>
-                {IconComponent && <IconComponent />}
+                {IconComponent && (
+                  <IconComponent
+                    style={{
+                      color: '#000',
+                      fill: '#000',
+                    }}
+                  />
+                )}
                 <span
                   style={{
                     color: '#797588',

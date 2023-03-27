@@ -7,6 +7,8 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "yarn with-env:dev turbo run dev",
+    "storybook": "turbo storybook",
+    "storybook-build": "turbo storybook-build",
     "with-env:dev": "dotenv -e .env.local --",
     "with-env:prd": "dotenv -e .env.production --",
     "with-env:stg": "dotenv -e .env.staging --",

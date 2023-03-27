@@ -12,6 +12,9 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
+    "storybook": "start-storybook -p 6201 --quiet",
+    "storybook-build": "build-storybook -o build-storybook-static",
+    "storybook-preview": "npx http-server build-storybook-static",
     "format-fix": "prettier --config .prettierrc --write --ignore-unknown -l .",
     "lint": "eslint --max-warnings 0 .",
     "lint-fix": "eslint --fix .",
