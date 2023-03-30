@@ -29,7 +29,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
           <div className="flex flex-wrap justify-between">
             <div className="flex items-center">
               <svg
-                className="stroke-dark-heading inline-block min-w-fit dark:stroke-white"
+                className="stroke-dark-heading inline-block dark:stroke-white"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
@@ -58,7 +58,7 @@ const ProgramItem = ({ title, image, description, techstack, previewLink, github
             </div>
             <div className="flex items-center">
               <svg
-                className="fill-dark-heading dark:fill-light-heading inline-block min-w-fit"
+                className="fill-dark-heading dark:fill-light-heading inline-block"
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
