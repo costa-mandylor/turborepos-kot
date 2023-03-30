@@ -58,5 +58,5 @@ Monorepo features and conventions:
   - It comes with two workspaces `apps` and `packages`.
   - All configurations (eslint, jest, Tailwind ui etc.) in `packages` are always prefixed with "config-" and imported into other workspaces directly from source without building (never transpiled).
   - All other `packages` beside configurations are always being built/transpiled and output to `dist/` folder.
-- All applications in monorepo are built with UmiJS.
+- All applications in monorepo are built with ReactJS.
 - Monorepo doesn't include any implementation of micro-frontend architecture, but is prepared with that in mind, so it can be easily extended (adding shared state, page composition etc.)
