@@ -6,6 +6,8 @@ import Link from 'next/link';
 
 import { socialMediaUrl } from '@/dataSource';
 
+import Login from '../Login';
+
 const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
     <nav className={`${isDesktop ? 'md:display hidden sm:hidden' : 'display'} justify-between text-center md:flex`}>
@@ -44,6 +46,7 @@ const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
             <Github className="fill-dark-heading dark:fill-light-heading w-7 h-7" />
           </Link>
         </li>
+        <Login />
       </ul>
     </nav>
   );

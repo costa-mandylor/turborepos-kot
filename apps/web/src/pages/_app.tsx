@@ -1,21 +1,27 @@
 import { useEffect, useState } from 'react';
+import { useStore } from 'react-redux';
 
 import { GrowthBookProvider } from '@growthbook/growthbook-react';
 import { Hydrate, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import { growthbook } from '@/libs/growthBook';
+import { wrapper } from '@/redux/store';
 
 import '../styles/globals.css';
 
-export default function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) => {
+  const store = useStore();
   const [queryClient] = useState(() => new QueryClient());
 
   useEffect(() => {
     // Load features asynchronously when the app renders
     growthbook.loadFeatures();
   }, []);
+
+  console.log('store __persistor', store.__persistor);
 
   return (
     <>
@@ -25,13 +31,17 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          <GrowthBookProvider growthbook={growthbook}>
-            <Component {...pageProps} />
-          </GrowthBookProvider>
-        </Hydrate>
-      </QueryClientProvider>
+      <PersistGate persistor={store.__persistor} loading={null}>
+        <QueryClientProvider client={queryClient}>
+          <Hydrate state={pageProps.dehydratedState}>
+            <GrowthBookProvider growthbook={growthbook}>
+              <Component {...pageProps} />
+            </GrowthBookProvider>
+          </Hydrate>
+        </QueryClientProvider>
+      </PersistGate>
     </>
   );
-}
+};
+
+export default wrapper.withRedux(App);
