@@ -6,11 +6,11 @@ import { Title } from 'ui';
 import { BlogItem } from '@components/blog/organisms';
 
 import BaseLayout from '@/components/BaseLayout';
-import { selectUserState, setUser } from '@/redux/reducer/userSlice';
-import { wrapper } from '@/redux/store';
+import { setUser } from '@/redux/reducer/userSlice';
+import { AppState, wrapper } from '@/redux/store';
 
 const Blog = () => {
-  const user = useSelector(selectUserState);
+  const user = useSelector((reduxState: AppState) => reduxState.user);
 
   console.log('user', user);
   return (
@@ -29,7 +29,7 @@ export default Blog;
 
 export const getServerSideProps = wrapper.getServerSideProps((store) => async ({ params }) => {
   // we can set the initial state from here
-  await store.dispatch(setUser({ isLoggingIn: false, jwt: 'asdasd' }));
+  await store.dispatch(setUser({ isLoggingIn: false, jwt: '' }));
 
   // const { user } = store.getState();
 

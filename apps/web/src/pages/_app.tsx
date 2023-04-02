@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useState } from 'react';
 import { useStore } from 'react-redux';
 
@@ -21,8 +22,6 @@ const App = ({ Component, pageProps }: AppProps) => {
     growthbook.loadFeatures();
   }, []);
 
-  console.log('store __persistor', store.__persistor);
-
   return (
     <>
       <Head>
@@ -31,7 +30,7 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PersistGate persistor={store.__persistor} loading={null}>
+      <PersistGate persistor={(store as any).__persistor} loading={null}>
         <QueryClientProvider client={queryClient}>
           <Hydrate state={pageProps.dehydratedState}>
             <GrowthBookProvider growthbook={growthbook}>
