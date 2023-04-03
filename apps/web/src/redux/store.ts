@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer } from 'redux-persist';
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import { rootReducer } from './reducer';
@@ -39,6 +38,7 @@ export const makeStore = () => {
       reducer: persistedReducer,
       devTools: process.env.NODE_ENV !== 'production',
     });
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     store.__persistor = persistStore(store); // Nasty hack
 
