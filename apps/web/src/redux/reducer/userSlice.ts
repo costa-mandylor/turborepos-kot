@@ -1,54 +1,19 @@
 import { Slice, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 
+import { User } from '@/domain/login';
+
 import { AppState } from '../store';
-
-// type User = {
-//   user: {
-//     blocked: false;
-//     confirmed: false;
-//     createdAt: Date;
-//     email: string;
-//     id: number;
-//     provider: string;
-//     updatedAt: Date;
-//     username: string;
-//   };
-// };
-
-// type UserPayload = {
-//   isLoggingIn: boolean;
-//   jwt: string;
-//   blocked: false;
-//   confirmed: false;
-//   createdAt: Date;
-//   email: string;
-//   id: number;
-//   provider: string;
-//   updatedAt: Date;
-//   username: string;
-// };
-
-export type UserState = {
-  user: {
-    isLoggingIn: boolean;
-    jwt: string;
-  };
-};
-
-const initialState: UserState = {
-  user: {
-    isLoggingIn: false,
-    jwt: '',
-  },
-};
 
 export const userSlice: Slice = createSlice({
   name: 'user',
-  initialState,
+  initialState: User,
   reducers: {
     setUser(state, action) {
-      state.user = action.payload;
+      return {
+        ...state,
+        ...action.payload,
+      };
     },
   },
 
@@ -63,6 +28,6 @@ export const userSlice: Slice = createSlice({
 
 export const { setUser } = userSlice.actions;
 
-export const selectUserState = (state: AppState) => state.user;
+export const selectUserState = (state: AppState) => state;
 
 export default userSlice.reducer;

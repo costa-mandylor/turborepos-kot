@@ -1,25 +1,19 @@
 import axios from 'axios';
 
+import { AuthenticationService } from '@/application/port';
 import { BEARER } from '@/libs/cmsAuth';
 import { request } from '@/libs/request';
 
-type ICMSLogin = {
-  identifier: string;
-  password: string;
-};
+import { ICMSUserRes } from './types';
 
-export type ICMSUserRes = {
-  id: number;
-  username: string;
-  email: string;
-  provider: string;
-  confirmed: boolean;
-  blocked: boolean;
-  jwt: string;
-};
+export const cmsAuth: AuthenticationService = async (params) => {
+  const data: ICMSUserRes = await request.post('/auth/local', params);
 
-export const cmsLogin = async (params: ICMSLogin): Promise<ICMSUserRes> => {
-  return await request.post('/auth/local', params);
+  return {
+    ...data.user,
+    jwt: data?.jwt,
+    isLoggingIn: true,
+  };
 };
 
 export const getCMSUser = async (token: string) => {

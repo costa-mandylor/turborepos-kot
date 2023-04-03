@@ -33,13 +33,6 @@ request.interceptors.response.use(
     return response.data;
   },
   async (error) => {
-    const originalRequest = error.config;
-    const errMessage = error.response.data.message as string;
-    if (errMessage.includes('not logged in') && !originalRequest._retry) {
-      originalRequest._retry = true;
-      // await refreshAccessTokenFn();
-      return request(originalRequest);
-    }
-    return Promise.reject(error);
+    return Promise.reject(error.response.data);
   },
 );

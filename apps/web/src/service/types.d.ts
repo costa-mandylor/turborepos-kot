@@ -56,3 +56,17 @@ export type IImage = {
     };
   };
 };
+
+export type ICMSUserRes = {
+  jwt: string;
+  user: {
+    blocked: boolean;
+    confirmed: boolean;
+    createdAt: Date;
+    email: string;
+    id: number;
+    provider: string;
+    updatedAt: Date;
+    username: string;
+  };
+};

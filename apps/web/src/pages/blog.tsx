@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 
 import { Title } from 'ui';
 
@@ -7,12 +6,9 @@ import { BlogItem } from '@components/blog/organisms';
 
 import BaseLayout from '@/components/BaseLayout';
 import { setUser } from '@/redux/reducer/userSlice';
-import { AppState, wrapper } from '@/redux/store';
+import { wrapper } from '@/redux/store';
 
 const Blog = () => {
-  const user = useSelector((reduxState: AppState) => reduxState.user);
-
-  console.log('user', user);
   return (
     <BaseLayout>
       <main className="max-width container mx-auto pt-10 pb-20 ">

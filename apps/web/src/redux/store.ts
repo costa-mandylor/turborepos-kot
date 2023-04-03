@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Action, ThunkAction, configureStore } from '@reduxjs/toolkit';
 import { createWrapper } from 'next-redux-wrapper';
-import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer, persistStore } from 'redux-persist';
+import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 import { rootReducer } from './reducer';
@@ -28,7 +28,7 @@ export const makeStore = () => {
 
     const persistConfig = {
       version: 1,
-      key: 'nextjs',
+      key: 'kot',
       whitelist: ['user'], // make sure it does not clash with server keys
       storage,
     };
