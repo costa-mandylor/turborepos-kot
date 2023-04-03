@@ -5,14 +5,14 @@ import { BLOG_PAGE } from '@/constants/pages';
 import { cmsAuth } from '@/service/cms-auth';
 
 import { ISchemaAuth, IUseDispatchUser, IUseRemoveUser, IUseToggleModal } from '../port';
-import { useToggleModal } from '../toggleModal/useToggleModal';
+import { useToggle } from '../useToggle';
 import { useDispatchUser } from '../user/dispatchUser';
 import { useRemoveUser } from '../user/removeUser';
 
-export function useAuthenticate() {
+export function useLoginActions() {
   const router = useRouter();
 
-  const { isToggleModal: isToggleAuthModal, onToggleModal: onToggleAuthModal }: IUseToggleModal = useToggleModal();
+  const { isToggleModal: isToggleAuthModal, onToggleModal: onToggleAuthModal }: IUseToggleModal = useToggle();
   const { dispatchUser }: IUseDispatchUser = useDispatchUser();
   const { removeUser }: IUseRemoveUser = useRemoveUser();
 

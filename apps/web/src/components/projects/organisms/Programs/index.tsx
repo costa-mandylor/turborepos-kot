@@ -18,7 +18,7 @@ const Programs = () => {
   return (
     <section>
       <Title title="Projects" />
-      <div className="grid grid-cols-1 gap-10 pt-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-8 pt-5 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3">
         {React.Children.toArray(
           projects?.map(({ attributes: { title, image, description, techstack, previewLink, githubLink } }, key) => (
             <ProgramItem

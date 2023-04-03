@@ -26,8 +26,7 @@ const TechStack = () => {
               href={item?.attributes?.caption}
               key={key}
               className="flex items-center justify-center"
-              rel="noreferrer"
-            >
+              rel="noreferrer">
               <Image
                 src={item?.attributes?.url}
                 title={item?.attributes?.name}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export function useToggleModal() {
+export function useToggle() {
   const [isToggleModal, setToggleModal] = useState<boolean>(false);
 
   const onToggleModal = () => {

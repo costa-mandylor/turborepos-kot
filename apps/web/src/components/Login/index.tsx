@@ -1,7 +1,7 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
 
-import { useAuthenticate } from '@/application/login/authenticate';
+import { useLoginActions } from '@/application/login/loginActions';
 import { useLoginForm } from '@/application/login/loginForm';
 import { ISchemaAuth, IUseGetUser } from '@/application/port';
 import { useGetUser } from '@/application/user/getUser';
@@ -9,7 +9,7 @@ import { useGetUser } from '@/application/user/getUser';
 const Login = () => {
   const { user }: IUseGetUser = useGetUser();
 
-  const { login, logout, errorLogin, isToggleAuthModal, onToggleAuthModal } = useAuthenticate();
+  const { login, logout, errorLogin, isToggleAuthModal, onToggleAuthModal } = useLoginActions();
   const { handleSubmit, control } = useLoginForm();
 
   const onSubmit = (data: ISchemaAuth) => {
