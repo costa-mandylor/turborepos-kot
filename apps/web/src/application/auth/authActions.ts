@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 import { BLOG_PAGE } from '@/constants/pages';
 import { cmsAuth } from '@/service/cms-auth';
 
-import { ISchemaAuth, IUseDispatchUser, IUseRemoveUser, IUseToggleModal } from '../port';
+import { ISchemaAuth, IUseDispatchUser, IUseRemoveUser, IUseToggle } from '../port';
 import { useToggle } from '../useToggle';
 import { useDispatchUser } from '../user/dispatchUser';
 import { useRemoveUser } from '../user/removeUser';
@@ -12,7 +12,7 @@ import { useRemoveUser } from '../user/removeUser';
 export function useAuthActions() {
   const router = useRouter();
 
-  const { isToggleModal: isToggleAuthModal, onToggleModal: onToggleAuthModal }: IUseToggleModal = useToggle();
+  const { isToggle: isToggleAuthModal, onToggle: onToggleAuthModal }: IUseToggle = useToggle();
   const { dispatchUser }: IUseDispatchUser = useDispatchUser();
   const { removeUser }: IUseRemoveUser = useRemoveUser();
 

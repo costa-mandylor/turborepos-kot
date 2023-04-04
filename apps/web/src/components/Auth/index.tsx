@@ -5,7 +5,7 @@ import { useAuthActions } from '@/application/auth/authActions';
 import { useLoginForm } from '@/application/auth/loginForm';
 import { ISchemaAuth } from '@/application/port';
 import { useGetUser } from '@/application/user/getUser';
-import { IUser } from '@/domain/login';
+import { IUser } from '@/domain/user';
 
 const Auth = () => {
   const { user }: { user: IUser } = useGetUser();

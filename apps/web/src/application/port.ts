@@ -1,6 +1,6 @@
 import * as z from 'zod';
 
-import { IUser } from '@/domain/login';
+import { IUser } from '@/domain/user';
 
 // Auth
 export const schema = ({ identifierMess, passwordMess }: { identifierMess?: string; passwordMess?: string }) => {
@@ -17,9 +17,9 @@ export type ISchemaAuth = z.infer<typeof schemaAuth>;
 export type AuthenticationService = (value: ISchemaAuth) => Promise<IUser>;
 
 // Modal
-export type IUseToggleModal = {
-  isToggleModal: boolean;
-  onToggleModal: () => void;
+export type IUseToggle = {
+  isToggle: boolean;
+  onToggle: () => void;
 };
 
 // User

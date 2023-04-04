@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 
-import { IUser } from '@/domain/login';
+import { IUser } from '@/domain/user';
 import { setUser } from '@/redux/reducer/userSlice';
 
 export function useDispatchUser() {

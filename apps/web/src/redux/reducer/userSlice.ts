@@ -1,7 +1,7 @@
 import { Slice, createSlice } from '@reduxjs/toolkit';
 import { HYDRATE } from 'next-redux-wrapper';
 
-import { User } from '@/domain/login';
+import { User } from '@/domain/user';
 
 import { AppState } from '../store';
 
