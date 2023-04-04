@@ -23,10 +23,6 @@ export type IUseToggleModal = {
 };
 
 // User
-export type IUseGetUser = {
-  user: IUser;
-};
-
 export type IUseDispatchUser = {
   dispatchUser: (user: IUser) => void;
 };

@@ -9,7 +9,7 @@ import { useToggle } from '../useToggle';
 import { useDispatchUser } from '../user/dispatchUser';
 import { useRemoveUser } from '../user/removeUser';
 
-export function useLoginActions() {
+export function useAuthActions() {
   const router = useRouter();
 
   const { isToggleModal: isToggleAuthModal, onToggleModal: onToggleAuthModal }: IUseToggleModal = useToggle();

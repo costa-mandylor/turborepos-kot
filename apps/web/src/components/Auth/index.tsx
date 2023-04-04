@@ -1,15 +1,16 @@
 import React from 'react';
 import { Controller } from 'react-hook-form';
 
-import { useLoginActions } from '@/application/login/loginActions';
-import { useLoginForm } from '@/application/login/loginForm';
-import { ISchemaAuth, IUseGetUser } from '@/application/port';
+import { useAuthActions } from '@/application/auth/authActions';
+import { useLoginForm } from '@/application/auth/loginForm';
+import { ISchemaAuth } from '@/application/port';
 import { useGetUser } from '@/application/user/getUser';
+import { IUser } from '@/domain/login';
 
-const Login = () => {
-  const { user }: IUseGetUser = useGetUser();
+const Auth = () => {
+  const { user }: { user: IUser } = useGetUser();
 
-  const { login, logout, errorLogin, isToggleAuthModal, onToggleAuthModal } = useLoginActions();
+  const { login, logout, errorLogin, isToggleAuthModal, onToggleAuthModal } = useAuthActions();
   const { handleSubmit, control } = useLoginForm();
 
   const onSubmit = (data: ISchemaAuth) => {
@@ -126,4 +127,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Auth;
