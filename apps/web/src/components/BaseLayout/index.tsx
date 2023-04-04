@@ -1,5 +1,6 @@
 import { ToastContainer } from 'react-toastify';
 
+import AuthModal from '../AuthModal';
 import Header from '../Header';
 
 const BaseLayout = ({ children }: { children: JSX.Element }) => {
@@ -7,6 +8,7 @@ const BaseLayout = ({ children }: { children: JSX.Element }) => {
     <>
       <Header />
       {children}
+      <AuthModal />
       <ToastContainer />
     </>
   );

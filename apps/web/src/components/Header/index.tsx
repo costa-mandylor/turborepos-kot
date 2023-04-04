@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 import Drawer from '../Drawer';
-import NavBar from '../NavBar';
+
+import NavBar from './organisms/NavBar';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);

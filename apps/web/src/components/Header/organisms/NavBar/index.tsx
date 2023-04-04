@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 import { socialMediaUrl } from '@/dataSource';
 
-import Auth from '../Auth';
+import ButtonAuth from '../ButtonAuth';
 
 const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
   return (
@@ -46,7 +46,7 @@ const NavBar = ({ isDesktop }: { isDesktop: boolean }) => {
             <Github className="fill-dark-heading dark:fill-light-heading w-7 h-7" />
           </Link>
         </li>
-        <Auth />
+        <ButtonAuth />
       </ul>
     </nav>
   );
